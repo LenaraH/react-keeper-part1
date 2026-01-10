@@ -1,0 +1,10 @@
+import barcode
+from barcode.write import ImageWrite
+from IPython.display import Image, display
+
+def generate_barcode(data):
+    code = barcode.get('code128', data, write=ImageWrite())
+    barcode_filename = code.save("barcode")
+    print("Barcode generated.")
+    display(Image(f"{barcode_filename}"))
+    generate_barcode(date)
